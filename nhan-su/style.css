@@ -1,0 +1,111 @@
+/* ========== Layout chung ========== */
+.container {
+  display: flex;
+  align-items: stretch;
+  /* ép 2 cột bằng chiều cao nhau */
+  max-height: 300px;
+}
+
+/* Cột logo bên trái */
+#logo {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+}
+
+#logo h3 {
+  background: #f0f0f0;
+  margin: 0;
+  flex: 2;
+  height: min-content;
+}
+
+#logo #avatar {
+  width: 100%;
+  height: 10px; /* avatar cố định */
+  object-fit: cover; /* cắt ảnh gọn, không méo */
+  flex: 8;
+}
+
+/* Cột banner bên phải */
+#banner {
+  flex: 8;
+  display: flex;
+}
+
+#banner img {
+  width: 100%;
+  height: auto; /* cao = cột logo */
+  object-fit: cover;
+  display: block;
+}
+
+/* Phần giữa */
+#middle {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+#left {
+  flex: 2;
+  background: #f9f9f9;
+  padding: 10px;
+}
+
+#center {
+  flex: 8;
+  padding: 10px;
+}
+
+/* Phần cuối */
+#bottom {
+  margin-top: 20px;
+  padding: 10px;
+  background: #eee;
+  text-align: center;
+}
+
+/* ========== Bảng ========== */
+body {
+  font-family: Arial, sans-serif; /* Font chữ */
+  padding: 20px; /* Khoảng cách bên trong */
+}
+
+table {
+  border-collapse: collapse; /* Gộp viền */
+  width: 100%; /* Chiếm hết chiều rộng */
+}
+
+th, td {
+  border: 1px solid #ccc; /* Viền ô */
+  padding: 8px 12px; /* Khoảng cách */
+  text-align: left; /* Căn lề trái */
+}
+
+thead tr {
+  background-color: #333; /* Hàng tiêu đề nền đen */
+  color: white; /* Chữ trắng */
+}
+
+/* Hàng lẻ (trừ tiêu đề) */
+tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Hàng chẵn */
+tbody tr:nth-child(even) {
+  background-color: #e6f2ff;
+}
+
+/* Hover khi rê chuột */
+tbody tr:hover {
+  background-color: #90ee90; /* Xanh lá */
+  cursor: pointer;
+}
+
+/* Dòng được chọn */
+.selected {
+  background-color: yellow !important; /* Màu vàng */
+}

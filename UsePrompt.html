@@ -1,0 +1,114 @@
+<html> 
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+    <title>Câu 1.5</title>
+
+    <script type="text/javascript">
+function disp_prompt() {
+    var name = prompt("VUI LÒNG NHẬP TÊN CỦA BẠN", "LE THANH LAM");
+
+    if (name != null && name != "") {
+        document.getElementById("result").innerHTML =
+            "XIN CHÀO " + name + "! How are you today?";
+    }
+}
+</script>
+
+    <style>
+       .container {
+          display: flex;
+          height: auto; /* cao tự động */
+          align-items: stretch; /* các cột cao bằng nhau */
+       }
+
+       #logo {
+          flex: 2;
+          display: flex;
+          flex-direction: column;
+       }
+
+       #logo h3 {
+          padding: 10px;
+          background: #f0f0f0;
+          margin: 0;
+       }
+
+       #logo #avatar {
+          width: 100%;
+          max-height: 200px;   /* giới hạn chiều cao avatar */
+          object-fit: cover;   /* cắt ảnh gọn mà không méo */
+       }
+
+       #banner {
+          flex: 8;
+       }
+
+       #banner img {
+          width: 100%;
+          max-height: 200px;   /* banner cùng chiều cao avatar */
+          object-fit: cover;
+       }
+
+       #middle {
+          display: flex;
+          gap: 20px;
+          margin-top: 20px;
+       }
+
+       #left {
+          flex: 2;
+          background: #f9f9f9;
+          padding: 10px;
+       }
+
+       #center {
+          flex: 8;
+          padding: 10px;
+       }
+
+       #bottom {
+          margin-top: 20px;
+          padding: 10px;
+          background: #eee;
+          text-align: center;
+       }
+    </style>
+</head> 
+<body> 
+
+<!-- Phần trên: logo + banner -->
+<div class="container">
+  <div id="logo">
+    <h3>
+      Họ tên: Lê Anh Đức <br>
+      Mã sinh viên: AT190313 <br>       
+    </h3>
+    <img id="avatar" src="https://www.w3schools.com/html/img_girl.jpg" alt="Avatar">
+  </div>
+
+  <div id="banner">
+    <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Banner">
+  </div>
+</div>
+
+<!-- Phần giữa: menu + nội dung -->
+<div id="middle">
+    <div id="left">
+        <a href="example.html">1.1 Ví dụ mẫu </a> <br>
+        <a href="information.html">1.2 Giới thiệu bản thân </a> <br>
+        <a href="Score.html">1.3 Bảng điểm </a> <br>
+        <a href="Curriculum_vitae.html">1.4 Lí lịch </a> <br>
+    </div>
+    <div id="center">
+         <input type="button" onclick="disp_prompt()" value="Display a prompt box" />
+        <p id="result"></p>
+    </div>
+</div>
+
+<!-- Phần cuối -->
+<div id="bottom">
+    <p>© 2025 - Thông tin cá nhân của sinh viên</p>
+</div>
+
+</body> 
+</html>
