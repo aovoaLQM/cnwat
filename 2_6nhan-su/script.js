@@ -27,14 +27,14 @@ function updateSelectAll() {
 selectAllCheckbox.addEventListener('change', function () {
   checkboxes.forEach((cb, index) => {
     cb.checked = this.checked;
-    updateRowHighlight(rows[index], cb.checked, index);
+    updateRowHighlight(rows[index + 1], cb.checked, index);
   });
 });
 
 // 2. Khi mỗi checkbox con thay đổi
 checkboxes.forEach((checkbox, index) => {
   checkbox.addEventListener('change', function () {
-    updateRowHighlight(rows[index], this.checked, index);
+    updateRowHighlight(rows[index + 1], this.checked, index);
     updateSelectAll();
   });
 });

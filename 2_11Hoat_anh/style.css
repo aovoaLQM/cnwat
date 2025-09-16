@@ -1,0 +1,22 @@
+    body {
+      
+      margin-top: 50px;
+      font-family: Arial, sans-serif;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #333;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #jumpBtn { background: #4CAF50; color: white; }
+    #stopBtn { background: #f44336; color: white; }

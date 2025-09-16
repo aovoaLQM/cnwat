@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Thông tin cá nhân</title>
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -37,49 +37,48 @@
       <a href="2_4Formhoso.html">2.4 Form hồ sơ </a> <br>
       <a href="2_5Formnhap.html">2.5 Form nhập </a> <br>
       <a href="2_6nhan-su/index.html">2.6 Danh sách </a> <br>
-    
+
 
     </div>
     <div id="center">
-      <!-- Danh sách menu bên trái -->
-<div class="menu">
-  <ul>
-    <li data-title="Quản lý cán bộ (Đăng ký thông tin)">
-      » Quản lý cán bộ (Đăng ký thông tin)
-    </li>
-    <li data-title="Phân quyền">
-      » Phân quyền
-    </li>
-    <li data-title="Cổng thông tin đào tạo và người học">
-      » Cổng thông tin đào tạo và người học
-    </li>
-    <li data-title="Quản lý văn bản và hồ sơ công việc">
-      » Quản lý văn bản và hồ sơ công việc
-    </li>
-    <li data-title="Hành chính công">
-      » Hành chính công
-    </li>
-    <li data-title="Hệ thống thông tin báo cáo">
-      » Hệ thống thông tin báo cáo
-    </li>
-    
-  </ul>
-</div>
+<div class="calculator">
+  <input type="text" id="result" value="0" disabled>
+  <div class="buttons">
+    <button onclick="clearAll()">C</button>
+    <button onclick="clearEntry()">CE</button>
+    <button onclick="toggleSign()">+/-</button>
+    <button onclick="append('%')">%</button>
 
-<!-- Khu vực hiển thị tiêu đề bên phải -->
-<div class="display-area">
-  <h3 id="selected-task">» Vui lòng chọn một tác vụ</h3>
-</div>
+    <button onclick="append('7')">7</button>
+    <button onclick="append('8')">8</button>
+    <button onclick="append('9')">9</button>
+    <button onclick="append('/')">/</button>
 
-    </div>
+    <button onclick="append('4')">4</button>
+    <button onclick="append('5')">5</button>
+    <button onclick="append('6')">6</button>
+    <button onclick="append('*')">*</button>
+
+    <button onclick="append('1')">1</button>
+    <button onclick="append('2')">2</button>
+    <button onclick="append('3')">3</button>
+    <button onclick="append('-')">-</button>
+
+    <button onclick="append('0')">0</button>
+    <button onclick="append('.')">.</button>
+    <button class="equal" onclick="calculate()">=</button>
+    <button onclick="append('+')">+</button>
   </div>
+</div>
+
 
   <!-- Phần cuối -->
   <div id="bottom">
     <p>© 2025 - Thông tin cá nhân của sinh viên</p>
   </div>
 
-  <script src="scripts.js"></script>
+  <script src="script.js"></script>
+
 </body>
 
 </html>
