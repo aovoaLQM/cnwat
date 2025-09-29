@@ -1,0 +1,30 @@
+#container {
+    display: flex;
+    flex-direction: column; /* sắp xếp theo chiều dọc: head, menu, main, footer */
+    min-height: 100vh; /* cho container chiếm toàn bộ chiều cao màn hình */
+}
+
+#main {
+    display: flex; /* chia layout bên trong thành left + center */
+    flex: 1; /* phần này sẽ giãn ra chiếm không gian */
+}
+
+#left {
+    flex: 2; /* chiếm 20% (2 phần trên tổng 10) */
+    background: #f2f2f2; /* màu nền nhẹ dễ nhìn */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#center {
+    flex: 8; /* chiếm 80% (8 phần trên tổng 10) */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#head, #menu, #footer {
+    padding: 15px;
+    text-align: center;
+    background: #e0e0e0;
+    margin-bottom: 5px;
+}

@@ -1,2 +1,4 @@
-<h2>Nội dung chính</h2>
-<p>Đây là phần hiển thị thông tin chính giữa trang.</p>
+<p>Company name: <b>TLA </b> <br>
+Address: <b>Thanh Xuan - Ha Noi</b> <br>
+Description: <b>Software company </b>
+</p>
