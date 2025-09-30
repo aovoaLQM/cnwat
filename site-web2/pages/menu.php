@@ -54,16 +54,10 @@
 
     <ul class="navbar">
 <ul class="navbar">
-  <li><a href="/hrm.abc.com.vn/example.html">1.1 Ví dụ mẫu</a></li>
-  <li><a href="/hrm.abc.com.vn/information.html">1.2 Giới thiệu bản thân</a></li>
-  <li><a href="/hrm.abc.com.vn/Score.html">1.3 Bảng điểm</a></li>
-  <li><a href="/hrm.abc.com.vn/Curriculum_vitae.html">1.4 Lí lịch</a></li>
-  <li><a href="2_1exampleJS.html">2.1 Ví dụ</a></li>
-  <li><a href="2_2Thitracnghiem.html">2.2 Thi trắc nghiệm</a></li>
-  <li><a href="2_3Formlop.html">2.3 Form lớp</a></li>
-  <li><a href="2_4Formhoso.html">2.4 Form hồ sơ</a></li>
-  <li><a href="2_5Formnhap.html">2.5 Form nhập</a></li>
-  <li><a href="2_6nhan-su/index.html">2.6 Danh sách</a></li>
+  <li><a href="/hrm.abc.com.vn/site-web2/index.php">Tạo Template </a></li>
+  <li><a href="/hrm.abc.com.vn/site-web3/index.php">Tạo Template </a></li>
+
+
 </ul>
 
     </ul>

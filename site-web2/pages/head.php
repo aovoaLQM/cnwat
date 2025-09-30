@@ -92,7 +92,7 @@
     </div>
 
     <div id="banner">
-        <img src="img/ho_chi_minh_1.jpg" alt="Banner">
+        <img src="../site-web2/img/ho_chi_minh_1.jpg" alt="Banner">
     </div>
   </div>
 

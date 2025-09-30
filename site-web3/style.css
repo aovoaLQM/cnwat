@@ -66,3 +66,16 @@
   padding: 20px;
   border: 1px solid #ccc;
 }
+
+#drawtable {
+    display: flex;
+    gap: 10px; /* khoảng cách giữa các khối */
+    align-items: center; /* căn giữa theo chiều dọc */
+}
+#drawtable div {
+    display: flex;
+    flex-direction: column; /* xếp dọc các phần tử trong mỗi div */
+    gap: 5px;
+}
+
+
