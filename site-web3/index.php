@@ -9,7 +9,7 @@ $page = $_GET['page'] ?? 'home'; // Trang mặc định là 'home'
     <title>Website Sinh Viên</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.css?v=1">
-        <link rel="stylesheet" href="style.css?v=2">
+        <link rel="stylesheet" href="style.css?v=3">
 
 
 </head>
@@ -29,8 +29,8 @@ $page = $_GET['page'] ?? 'home'; // Trang mặc định là 'home'
     <a href="index.php?page=calculate1">Calculate1</a>
     <a href="index.php?page=calculate2">Calculate2</a>
     <a href="index.php?page=array1">Array1</a>
-    <a href="index.php?page=array2">Array1</a>
-    <a href="index.php?page=uploadform">UploadForm</a>
+    <a href="index.php?page=array2">Array2</a>
+    <a href="index.php?page=uploadprocess">uploadprocess</a>
     
 </div>
 

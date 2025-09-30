@@ -78,4 +78,23 @@
     gap: 5px;
 }
 
+.menu {
+    background: #2c3e50;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    gap: 15px; /* khoảng cách giữa các link */
+}
 
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: #3498db;
+}
