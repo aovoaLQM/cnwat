@@ -1,0 +1,100 @@
+#container {
+    display: flex;
+    flex-direction: column; /* sắp xếp theo chiều dọc: head, menu, main, footer */
+    min-height: 100vh; /* cho container chiếm toàn bộ chiều cao màn hình */
+}
+
+#main {
+    display: flex; /* chia layout bên trong thành left + center */
+    flex: 1; /* phần này sẽ giãn ra chiếm không gian */
+}
+
+#left {
+    flex: 2; /* chiếm 20% (2 phần trên tổng 10) */
+    background: #f2f2f2; /* màu nền nhẹ dễ nhìn */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#center {
+    flex: 8; /* chiếm 80% (8 phần trên tổng 10) */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#head, #menu, #footer {
+    padding: 15px;
+    text-align: center;
+    background: #e0e0e0;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+  .tab-container {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 10px;
+}
+
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  margin-right: 2px;
+  transition: background-color 0.3s;
+}
+
+/* Hover: sáng lên nếu chưa được chọn */
+.tab:hover:not(.active) {
+  background-color: #e0e0e0;
+}
+
+/* Tab được chọn */
+.tab.active {
+  background-color: #00bcd4;
+  color: white;
+  font-weight: bold;
+}
+
+.tab-content {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+#drawtable {
+    display: flex;
+    gap: 10px; /* khoảng cách giữa các khối */
+    align-items: center; /* căn giữa theo chiều dọc */
+}
+#drawtable div {
+    display: flex;
+    flex-direction: column; /* xếp dọc các phần tử trong mỗi div */
+    gap: 5px;
+}
+
+.menu {
+    background: #2c3e50;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    gap: 15px; /* khoảng cách giữa các link */
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: #3498db;
+}
