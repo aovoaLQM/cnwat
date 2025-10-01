@@ -55,7 +55,9 @@
     <ul class="navbar">
 <ul class="navbar">
   <li><a href="/hrm.abc.com.vn/site-web2/index.php">Tạo Template </a></li>
-  <li><a href="/hrm.abc.com.vn/site-web3/index.php">3.1 Lấy và gửi dữ liệu </a></li>
+  <li><a href="/hrm.abc.com.vn/site-web3/index.php">4.1 Lấy và gửi dữ liệu </a></li>
+  <li><a href="/hrm.abc.com.vn/site-web6_GetForm/index.php">4.2 GetForm </a></li>
+  <li><a href="/hrm.abc.com.vn/site-web7_Session/index.php">4.3 Session </a></li>
 
 
 </ul>
