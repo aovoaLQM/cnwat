@@ -22,58 +22,29 @@ $page = $_GET['page'] ?? 'home'; // Trang mặc định là 'home'
                 <!-- Menu riêng cho phần chức năng -->
                 <div class="menu"> 
                     <a href="index.php?page=home">Home</a>
-                    <a href="index.php?page=ar1Chieu">Ar 1 Chieu</a> 
-                    <a href="index.php?page=matrix">Matrix</a>
-                    <a href="index.php?page=AssociateArr">AssociateArr</a> 
+                    <a href="index.php?page=list">list</a> 
+                    <a href="index.php?page=add">Add</a>
                 </div>
 
                 <!-- Nội dung động -->
                 <div class="content">
                     <?php
                     switch ($page) {
-                        case 'ar1Chieu':
-                            include 'pages/ar1Chieu.php';
+                        case 'add':
+                            include 'pages/add.php';
                             break;
 
-                        case 'matrix':
-                            include 'pages/matrix.php';
+                        case 'list':
+                            include 'pages/list.php';
                             break;
 
-                        case 'AssociateArr':
-                            include 'pages/AssociateArr.php';
-                            break;
+
 
                         default:
                             include 'pages/home.php'; // Trang mặc định
                             break;
                     }
                     ?>
-
-<?php
-require_once("libs/math.php");
-
-echo "<br>";
-
-// Gọi hàm vẽ bảng
-VeBang();
-echo "<br>";
-
-// Gọi hàm Max2
-echo "Số lớn nhất: " . Max2(100, 10);
-echo "<br>";
-
-// Kiểm tra login
-if (CheckLogin("admin", "admin")) {
-    echo "<br>Đăng nhập thành công";
-} else {
-    echo "<br>Sai tên đăng nhập hoặc mật khẩu<br>";
-}
-
-// Gọi hàm truyền mảng
-$mang = array(10, 2, 8, 6, 4, 1, 9);
-echo "<br>Tổng theo cách 1: " . TongDay1($mang);
-echo "<br>Tổng theo cách 2: " . TongDay2($mang);
-?>
 
 
 
