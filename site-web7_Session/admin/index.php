@@ -26,7 +26,8 @@ $page = $_GET['page'] ?? 'home';
 <div class="menu">
     <a href="index.php?page=home">Home</a>
     <a href="index.php?page=upload">Upload</a>
-    <a href="index.php?page=logout">Logout</a> <!-- trỏ qua switch case -->
+    <a href="index.php?page=logout">Logout</a>
+    <a href="index.php?page=favourist">favourist</a> <!-- trỏ qua switch case -->
 </div>
 
 
@@ -40,6 +41,10 @@ $page = $_GET['page'] ?? 'home';
 
         case 'logout':
             include 'pages/logout.php';
+            break;
+
+        case 'favourist':
+            include 'pages/favourist.php';
             break;
 
         case 'home':
