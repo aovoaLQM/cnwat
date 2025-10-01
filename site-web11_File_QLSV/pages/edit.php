@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         <label>Image:</label> 
         <input type="file" name="image"><br>
-        <img src="../uploads/<?php echo $student['image'] ?: 'no-image.png'; ?>" width="80"><br><br>
+        <img src="../../uploads/<?php echo $student['image'] ?: 'no-image.png'; ?>" width="80"><br><br>
         
         <label>Class:</label> 
         <input type="text" name="class" value="<?php echo htmlspecialchars($student['class']); ?>" required><br><br>
