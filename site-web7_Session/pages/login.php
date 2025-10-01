@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($name === "admin" && $pass === "admin") {
         $_SESSION["Username"] = $name;
+        $_SESSION["Password"] = $password;
 
         // Lưu cookie 30 ngày
         setcookie("Username", $name, time() + 30*24*60*60, "/");
