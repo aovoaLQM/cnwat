@@ -6,149 +6,48 @@
 <title>URL Range Opener</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #0f0f0f;
-    color: #e8e8e8;
-    min-height: 100vh;
-    padding: 2rem;
-  }
-  h1 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 0.4rem;
-    letter-spacing: -0.3px;
-  }
-  .subtitle {
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 2rem;
-  }
-  .card {
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.25rem;
-    max-width: 720px;
-  }
-  label {
-    display: block;
-    font-size: 12px;
-    color: #888;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  input[type=text], input[type=number] {
-    width: 100%;
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 10px 14px;
-    color: #e8e8e8;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.15s;
-  }
-  input:focus { border-color: #555; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e8e8e8; min-height: 100vh; padding: 2rem; }
+  h1 { font-size: 1.4rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+  .subtitle { font-size: 13px; color: #666; margin-bottom: 2rem; }
+  .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.25rem; max-width: 720px; }
+  label { display: block; font-size: 12px; color: #888; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  input[type=text], input[type=number] { width: 100%; background: #111; border: 1px solid #333; border-radius: 8px; padding: 10px 14px; color: #e8e8e8; font-size: 14px; outline: none; }
   input::placeholder { color: #444; }
   .row { display: flex; gap: 12px; margin-top: 1rem; }
   .row > div { flex: 1; }
   .btn-row { display: flex; gap: 10px; margin-top: 1.25rem; flex-wrap: wrap; }
-  button {
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    border: none;
-    transition: all 0.15s;
-  }
-  .btn-primary {
-    background: #e8e8e8;
-    color: #0f0f0f;
-  }
+  button { padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; border: none; transition: all 0.15s; }
+  .btn-primary { background: #e8e8e8; color: #0f0f0f; }
   .btn-primary:hover { background: #fff; }
-  .btn-secondary {
-    background: transparent;
-    border: 1px solid #333;
-    color: #e8e8e8;
-  }
-  .btn-secondary:hover { border-color: #555; background: #1f1f1f; }
-  .btn-danger {
-    background: transparent;
-    border: 1px solid #4a1a1a;
-    color: #e05a5a;
-  }
+  .btn-green { background: #1a3a1a; border: 1px solid #2a6a2a; color: #6adc6a; }
+  .btn-green:hover { background: #223a22; }
+  .btn-green:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-stop { background: #3a1010; border: 1px solid #6a2020; color: #ff6b6b; display: none; }
+  .btn-stop:hover { background: #4a1515; }
+  .btn-danger { background: transparent; border: 1px solid #4a1a1a; color: #e05a5a; }
   .btn-danger:hover { background: #2a0f0f; }
 
-  #status {
-    font-size: 13px;
-    color: #666;
-    margin-top: 1rem;
-    display: none;
-  }
-  #status span { color: #aaa; }
+  .status-box { margin-top: 1.25rem; background: #111; border: 1px solid #222; border-radius: 10px; padding: 1rem 1.25rem; display: none; }
+  .status-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .status-text { font-size: 14px; color: #aaa; }
+  .status-text strong { color: #fff; }
+  .countdown { font-size: 22px; font-weight: 600; color: #4a9eff; font-variant-numeric: tabular-nums; }
+  .progress-bar-bg { background: #222; border-radius: 4px; height: 5px; overflow: hidden; }
+  .progress-bar { height: 5px; background: #4a9eff; border-radius: 4px; transition: width 0.3s; width: 0%; }
+  .current-url { font-size: 12px; color: #555; margin-top: 8px; word-break: break-all; }
 
-  .link-list {
-    max-height: 420px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-top: 1rem;
-  }
-  .link-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 12px;
-    background: #111;
-    border: 1px solid #222;
-    border-radius: 8px;
-    transition: border-color 0.1s;
-  }
-  .link-item:hover { border-color: #333; }
-  .num {
-    font-size: 11px;
-    color: #555;
-    min-width: 40px;
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-  }
-  .link-item a {
-    color: #7aacf0;
-    font-size: 13px;
-    text-decoration: none;
-    word-break: break-all;
-    flex: 1;
-  }
-  .link-item a:hover { color: #a8c8ff; text-decoration: underline; }
-  .open-btn {
-    font-size: 11px;
-    padding: 3px 10px;
-    border-radius: 5px;
-    background: transparent;
-    border: 1px solid #333;
-    color: #888;
-    cursor: pointer;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .open-btn:hover { border-color: #555; color: #ccc; }
-  .warn-box {
-    background: #1a1200;
-    border: 1px solid #3a2d00;
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 12px;
-    color: #c8a840;
-    margin-top: 1rem;
-    display: none;
-    line-height: 1.6;
-  }
+  .link-list { max-height: 380px; overflow-y: auto; display: flex; flex-direction: column; gap: 4px; margin-top: 1rem; }
+  .link-item { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: #111; border: 1px solid #222; border-radius: 8px; }
+  .link-item.active { border-color: #4a9eff; background: #0a1a2a; }
+  .link-item.done { border-color: #1a3a1a; }
+  .num { font-size: 11px; color: #555; min-width: 36px; text-align: right; font-variant-numeric: tabular-nums; }
+  .link-item a { color: #7aacf0; font-size: 13px; text-decoration: none; word-break: break-all; flex: 1; }
+  .link-item a:hover { text-decoration: underline; }
+  .tag { font-size: 10px; padding: 2px 8px; border-radius: 20px; flex-shrink: 0; }
+  .tag-wait { background: #222; color: #555; }
+  .tag-open { background: #0d2a4a; color: #4a9eff; }
+  .tag-done { background: #0d2a0d; color: #4adc4a; }
+
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: #111; }
   ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
@@ -157,7 +56,7 @@
 <body>
 
 <h1>URL Range Opener</h1>
-<p class="subtitle">Thay đuôi link và mở hàng loạt — chạy thẳng trên trình duyệt</p>
+<p class="subtitle">Mở lần lượt từng link, cách nhau 1 giây</p>
 
 <div class="card">
   <label>URL gốc</label>
@@ -170,7 +69,11 @@
     </div>
     <div>
       <label>Đến số</label>
-      <input type="number" id="to" value="10" min="0">
+      <input type="number" id="to" value="5" min="0">
+    </div>
+    <div>
+      <label>Khoảng cách (giây)</label>
+      <input type="number" id="delay" value="1" min="1" max="10">
     </div>
     <div>
       <label>Hậu tố (tuỳ chọn)</label>
@@ -180,26 +83,37 @@
 
   <div class="btn-row">
     <button class="btn-primary" onclick="generate()">▶ Tạo danh sách</button>
-    <button class="btn-secondary" id="openAllBtn" onclick="openAll()" style="display:none">Mở tất cả</button>
-    <button class="btn-danger" id="clearBtn" onclick="clearList()" style="display:none">Xoá</button>
+    <button class="btn-green" id="startBtn" onclick="startSequential()" style="display:none">⏩ Bắt đầu mở lần lượt</button>
+    <button class="btn-stop" id="stopBtn" onclick="stopSequential()">⏹ Dừng</button>
+    <button class="btn-danger" id="clearBtn" onclick="clearAll()" style="display:none">Xoá</button>
   </div>
 
-  <div id="status"></div>
-  <div class="warn-box" id="warnBox">
-    ⚠️ Nếu tab không mở được: trình duyệt đang chặn pop-up.<br>
-    Nhấn vào biểu tượng khóa/pop-up trên thanh địa chỉ → chọn <strong>Cho phép pop-up</strong> từ trang này, rồi thử lại.
+  <div class="status-box" id="statusBox">
+    <div class="status-top">
+      <div class="status-text">Đang mở: <strong id="statusCurrent">0</strong> / <strong id="statusTotal">0</strong></div>
+      <div class="countdown" id="countdown"></div>
+    </div>
+    <div class="progress-bar-bg"><div class="progress-bar" id="progressBar"></div></div>
+    <div class="current-url" id="currentUrl"></div>
   </div>
 </div>
 
 <div class="card" id="listCard" style="display:none">
-  <label id="listLabel">Danh sách link</label>
+  <label id="listLabel"></label>
   <div class="link-list" id="linkList"></div>
 </div>
 
 <script>
+let urls = [];
+let items = [];
+let running = false;
+let stopFlag = false;
+let timerId = null;
+let currentIndex = 0;
+let countdownTimer = null;
+
 function buildUrl(base, num, suffix) {
-  let b = base.trim().replace(/\/+$/, '');
-  return b + '/' + num + (suffix || '') + '/';
+  return base.trim().replace(/\/+$/, '') + '/' + num + (suffix || '') + '/';
 }
 
 function generate() {
@@ -209,49 +123,145 @@ function generate() {
   const suffix = document.getElementById('suffix').value;
 
   if (!base) { alert('Vui lòng nhập URL gốc'); return; }
-  if (isNaN(from) || isNaN(to) || from > to) { alert('Khoảng số không hợp lệ (Từ phải ≤ Đến)'); return; }
-  if (to - from > 999) { alert('Tối đa 1000 link mỗi lần để tránh treo trình duyệt'); return; }
+  if (isNaN(from) || isNaN(to) || from > to) { alert('Khoảng số không hợp lệ'); return; }
+  if (to - from > 199) { alert('Tối đa 200 link mỗi lần'); return; }
+
+  stopSequential();
+  urls = [];
+  items = [];
 
   const list = document.getElementById('linkList');
   list.innerHTML = '';
 
   for (let i = from; i <= to; i++) {
     const url = buildUrl(base, i, suffix);
+    urls.push(url);
+
     const item = document.createElement('div');
     item.className = 'link-item';
+    item.id = 'item-' + (i - from);
     item.innerHTML = `
       <span class="num">${i}</span>
-      <a href="${url}" target="_blank" rel="noopener">${url}</a>
-      <button class="open-btn" onclick="window.open('${url}','_blank')">Mở</button>
+      <a href="${url}" target="_blank">${url}</a>
+      <span class="tag tag-wait" id="tag-${i - from}">chờ</span>
     `;
     list.appendChild(item);
+    items.push(item);
   }
 
   const count = to - from + 1;
-  const status = document.getElementById('status');
-  status.innerHTML = `Đã tạo <span>${count} link</span> &nbsp;·&nbsp; ${from} → ${to}`;
-  status.style.display = 'block';
-
-  document.getElementById('openAllBtn').style.display = 'inline-block';
-  document.getElementById('clearBtn').style.display = 'inline-block';
+  document.getElementById('listLabel').textContent = `Danh sách — ${count} link (${from} → ${to})`;
   document.getElementById('listCard').style.display = 'block';
-  document.getElementById('listLabel').textContent = `Danh sách (${count} link)`;
+  document.getElementById('startBtn').style.display = 'inline-block';
+  document.getElementById('clearBtn').style.display = 'inline-block';
+  document.getElementById('statusBox').style.display = 'none';
+  document.getElementById('statusTotal').textContent = count;
 }
 
-function openAll() {
-  const links = document.querySelectorAll('#linkList a');
-  if (!links.length) return;
-  document.getElementById('warnBox').style.display = 'block';
-  links.forEach(a => window.open(a.href, '_blank'));
+function startSequential() {
+  if (urls.length === 0) return;
+  currentIndex = 0;
+  stopFlag = false;
+  running = true;
+
+  document.getElementById('startBtn').style.display = 'none';
+  document.getElementById('stopBtn').style.display = 'inline-block';
+  document.getElementById('statusBox').style.display = 'block';
+  document.getElementById('statusTotal').textContent = urls.length;
+
+  openNext();
 }
 
-function clearList() {
+function openNext() {
+  if (stopFlag || currentIndex >= urls.length) {
+    finish();
+    return;
+  }
+
+  const url = urls[currentIndex];
+  const delay = parseInt(document.getElementById('delay').value) || 1;
+
+  // Đánh dấu đang mở
+  if (items[currentIndex]) {
+    items[currentIndex].className = 'link-item active';
+    items[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const tag = document.getElementById('tag-' + currentIndex);
+    if (tag) { tag.className = 'tag tag-open'; tag.textContent = 'đang mở'; }
+  }
+
+  document.getElementById('statusCurrent').textContent = currentIndex + 1;
+  document.getElementById('currentUrl').textContent = url;
+  updateProgress(currentIndex + 1, urls.length);
+
+  // Mở link — dùng location.href trên tab hiện tại nếu là link đầu, window.open các link sau
+  window.open(url, '_blank');
+
+  // Đánh dấu xong
+  setTimeout(() => {
+    if (items[currentIndex]) {
+      items[currentIndex].className = 'link-item done';
+      const tag = document.getElementById('tag-' + currentIndex);
+      if (tag) { tag.className = 'tag tag-done'; tag.textContent = 'đã mở'; }
+    }
+  }, 300);
+
+  currentIndex++;
+
+  if (currentIndex >= urls.length) {
+    setTimeout(finish, 500);
+    return;
+  }
+
+  // Đếm ngược
+  let remaining = delay;
+  document.getElementById('countdown').textContent = remaining + 's';
+  clearInterval(countdownTimer);
+  countdownTimer = setInterval(() => {
+    remaining--;
+    if (remaining <= 0) {
+      clearInterval(countdownTimer);
+      document.getElementById('countdown').textContent = '';
+    } else {
+      document.getElementById('countdown').textContent = remaining + 's';
+    }
+  }, 1000);
+
+  timerId = setTimeout(openNext, delay * 1000);
+}
+
+function stopSequential() {
+  stopFlag = true;
+  running = false;
+  clearTimeout(timerId);
+  clearInterval(countdownTimer);
+  document.getElementById('stopBtn').style.display = 'none';
+  document.getElementById('startBtn').style.display = 'inline-block';
+  document.getElementById('countdown').textContent = '';
+}
+
+function finish() {
+  running = false;
+  clearInterval(countdownTimer);
+  document.getElementById('stopBtn').style.display = 'none';
+  document.getElementById('startBtn').style.display = 'inline-block';
+  document.getElementById('startBtn').textContent = '✓ Đã xong — Chạy lại';
+  document.getElementById('countdown').textContent = '✓';
+  document.getElementById('currentUrl').textContent = 'Đã mở xong tất cả ' + urls.length + ' link!';
+}
+
+function updateProgress(current, total) {
+  document.getElementById('progressBar').style.width = Math.round((current / total) * 100) + '%';
+}
+
+function clearAll() {
+  stopSequential();
+  urls = []; items = [];
   document.getElementById('linkList').innerHTML = '';
   document.getElementById('listCard').style.display = 'none';
-  document.getElementById('openAllBtn').style.display = 'none';
+  document.getElementById('startBtn').style.display = 'none';
   document.getElementById('clearBtn').style.display = 'none';
-  document.getElementById('status').style.display = 'none';
-  document.getElementById('warnBox').style.display = 'none';
+  document.getElementById('statusBox').style.display = 'none';
+  document.getElementById('startBtn').textContent = '⏩ Bắt đầu mở lần lượt';
 }
 </script>
 </body>
